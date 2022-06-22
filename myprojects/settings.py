@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'projectsapp.apps.ProjectsappConfig',
     'tailwind',
-    'django_browser_reload'
+    'django_browser_reload',
+    
 ]
 
 TAILWIND_APP_NAME = 'theme'
