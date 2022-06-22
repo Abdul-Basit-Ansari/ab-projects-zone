@@ -1,0 +1,116 @@
+{% load tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="shortcut icon" href="/media/img/logo/navlogo.png" type="image/x-icon"> {% tailwind_css %}
+</head>
+
+<body>
+    <script>
+        function unhidden() {
+            id = document.getElementById('mymenu')
+
+            if (id.style.display === "flex") {
+                id.style.display = "none"
+
+            } else {
+
+                id.style.display = "flex"
+            }
+        }
+    </script>
+    <nav class="flex items-center justify-between flex-wrap text-teal-100 bg-teal-600 border-b-2 border-slate-700 py-6 px-3">
+        <div class="flex items-center flex-shrink-0 text-white mr-3">
+            <img src="/media/img/logo/navlogo.png" class="w-10 mr-2 rounded-full">
+            <a href="/" class="font-semibold text-xl tracking-tight text-teal-100 hover:text-teal-300">A.B Projects Zone</a>
+        </div>
+        <div class="block lg:hidden">
+            <button onclick="unhidden()" class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+			<svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+		  </button>
+        </div>
+
+
+        <div id="mymenu" class="w-full lg:flex-grow lg:flex lg:items-center lg:w-auto hidden">
+            <div class="text-sm lg:flex-grow">
+            </div>
+            <div>
+                <a href="/" class="block mt-4 lg:inline-block lg:mt-0 text-teal-100 hover:text-teal-300 mr-4">
+					Home
+				</a>
+                <a href="/projects/" class="block mt-4 lg:inline-block lg:mt-0 text-teal-100 hover:text-teal-300 mr-4">
+					Projects
+				</a>
+                <a href="/contact/" class="block mt-4 lg:inline-block lg:mt-0 text-teal-100 hover:text-teal-300 mr-4">
+					Contact Us
+					
+				</a>
+                <a href="/about/" class="block mt-4 lg:inline-block lg:mt-0 text-teal-100 hover:text-teal-300 mr-4">
+			  About
+			</a>
+                <a href="/feedback/" class="inline-block text-sm px-4 py-2 leading-none border rounded hover:text-teal-500 border-teal-200 hover:border-teal-500  hover:bg-teal-200 mt-4 lg:mt-0">FeedBack</a>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <style>
+        .ss {
+            background-color: #48BB78;
+        }
+        
+        .er {
+            background-color: #F56565;
+        }
+        
+        .wr {
+            background-color: #ECC94B;
+        }
+        
+        .in {
+            background-color: #4299E1;
+        }
+    </style>
+    {% for message in messages %}
+    <div class="container" id="alertbox">
+        <div class="container {{message.tags}} flex items-center text-white text-sm font-bold px-4 py-3 relative" role="alert">
+            <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+				<path
+					d="M12.432 0c1.34 0 2.01.912 2.01 1.957 0 1.305-1.164 2.512-2.679 2.512-1.269 0-2.009-.75-1.974-1.99C9.789 1.436 10.67 0 12.432 0zM8.309 20c-1.058 0-1.833-.652-1.093-3.524l1.214-5.092c.211-.814.246-1.141 0-1.141-.317 0-1.689.562-2.502 1.117l-.528-.88c2.572-2.186 5.531-3.467 6.801-3.467 1.057 0 1.233 1.273.705 3.23l-1.391 5.352c-.246.945-.141 1.271.106 1.271.317 0 1.357-.392 2.379-1.207l.6.814C12.098 19.02 9.365 20 8.309 20z" />
+			</svg>
+            <p>{{message}}</p>
+
+            <span class="absolute top-0 bottom-0 right-0 px-4 py-3 closealertbutton">
+				<svg class="fill-current h-6 w-6 text-white" role="button" xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 20 20">
+					<title>Close</title>
+					<path
+						d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
+				</svg>
+			</span>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous">
+    </script>
+
+    <script>
+        $(".closealertbutton").click(function(e) {
+            // $('.alertbox')[0].hide()
+            // e.preventDefault();
+            pid = $(this).parent().parent().hide(500)
+
+            // $(".alertbox", this).hide()
+        })
+    </script>
+    {% endfor %} {% block body %} {% endblock body %}
+
+</body>
+
+</html>
