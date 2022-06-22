@@ -35,11 +35,12 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'theme.apps.ThemeConfig',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'projectsapp.apps.ProjectsappConfig',
     'tailwind',
-    'theme',
     'django_browser_reload'
 ]
 
@@ -52,12 +53,15 @@ INTERNAL_IPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django_browser_reload.middleware.BrowserReloadMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "django.middleware.locale.LocaleMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    "django.middleware.common.BrokenLinkEmailsMiddleware",
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
