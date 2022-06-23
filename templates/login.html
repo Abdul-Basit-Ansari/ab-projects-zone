@@ -8,6 +8,13 @@
 		
 	
 	<div class="mx-auto w-full max-w-[550px]">
+		<h1 style="font-size:2rem ;margin-top: 2rem;margin-bottom: 2rem;" class="text-teal-600">You Are 
+		{% if  user.is_authenticated %}
+			Logged in
+			{% else %}
+			Not Loggedin
+		{% endif %}
+			</h1>
 
 	<form action="/mysirg2881928/" method="POST">
 <div class="mb-5">
@@ -26,6 +33,11 @@ Password
 	<button class="hover:shadow-form rounded-md text-teal-100 bg-teal-600 hover:bg-teal-900 hover:text-teal-300 py-3 px-8 text-base font-semibold outline-none">
 Login
 </button>
+<a href="/ulogout/" class="hover:shadow-form rounded-md text-teal-100 bg-teal-600 hover:bg-teal-900 hover:text-teal-300 py-3 px-8 text-base font-semibold outline-none">
+	
+	Logout
+</a>
+
 </div>
 </form>
 </div>

@@ -43,25 +43,32 @@ def about(request):
 	return render(request,"about.html")
 
 
-def login(request):
+def ulogin(request):
+	user = request.user
 	if request.method == "POST":
 		name = request.POST.get("name")
 		password = request.POST.get("password")
-		user = request.user
 		user=authenticate(username= name, password=password)
 		if user is not None:
 			login(request, user)
 			messages.success(request, "Successfully Logged In")
 				
 			if not user.is_authenticated:
-				return render(request,"login.html")
+				messages.error(request, "You Are Not Logged In")
 			if user.is_authenticated:
-				return render(request,"login.html")
+				return redirect("index")
 			else:
 				messages.error(request, "Invalid credentials! Please try again")
 				# return redirect("home")
-	return render(request,"login.html")
+	
+	return render(request,"login.html",{'user':user})
 
 
 
 	
+def ulogout(request):
+	user=request.user
+	if user.is_authenticated:
+		logout(request)
+		messages.success(request, "Successly Logout..!")
+	return redirect("index")
