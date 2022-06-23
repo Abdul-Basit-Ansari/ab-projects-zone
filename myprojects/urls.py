@@ -19,8 +19,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.views.static import serve
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path("__reload__/", include("django_browser_reload.urls")),
+    path('sir2881928/', admin.site.urls),
     path('' , include("projectsapp.urls")),
     re_path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
     re_path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
