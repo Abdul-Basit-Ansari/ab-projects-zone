@@ -1,6 +1,8 @@
 from django.shortcuts import redirect, render
 from . models import Project,Contactus,Feedback
 from django.contrib import messages
+from django.contrib.auth.models import User
+from django.contrib.auth  import authenticate,  login, logout
 # Create your views here.
 
 def index(request):
@@ -40,3 +42,26 @@ def feedback(request):
 def about(request):
 	return render(request,"about.html")
 
+
+def login(request):
+	if request.method == "POST":
+		name = request.POST.get("name")
+		password = request.POST.get("password")
+		user = request.user
+		user=authenticate(username= name, password=password)
+		if user is not None:
+			login(request, user)
+			messages.success(request, "Successfully Logged In")
+				
+			if not user.is_authenticated:
+				return render(request,"login.html")
+			if user.is_authenticated:
+				return render(request,"login.html")
+			else:
+				messages.error(request, "Invalid credentials! Please try again")
+				# return redirect("home")
+	return redirect("index")
+
+
+
+	
