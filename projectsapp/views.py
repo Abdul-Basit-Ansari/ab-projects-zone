@@ -1,3 +1,4 @@
+import re
 from django.shortcuts import redirect, render
 from . models import Project,Contactus,Feedback
 from django.contrib import messages
@@ -70,5 +71,7 @@ def ulogout(request):
 	user=request.user
 	if user.is_authenticated:
 		logout(request)
-		messages.success(request, "Successly Logout..!")
+		messages.success(request, "Successfully Logout..!")
 	return redirect("index")
+
+

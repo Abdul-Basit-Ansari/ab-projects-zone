@@ -27,7 +27,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG =False
 ALLOWED_HOSTS = ["ab-projects-zone.herokuapp.com","localhost","127.0.0.1"]
 
-
+CSRF_TRUSTED_ORIGINS = ['"ab-projects-zone.herokuapp.com"']
 # Application definition
 
 INSTALLED_APPS = [
