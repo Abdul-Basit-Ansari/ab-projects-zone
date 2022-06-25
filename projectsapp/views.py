@@ -1,4 +1,3 @@
-import re
 from django.shortcuts import redirect, render
 from . models import Project,Contactus,Feedback
 from django.contrib import messages

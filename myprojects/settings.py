@@ -27,7 +27,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG =False
 ALLOWED_HOSTS = ["ab-projects-zone.herokuapp.com","localhost","127.0.0.1"]
 
-CSRF_TRUSTED_ORIGINS = ['"ab-projects-zone.herokuapp.com"']
+CSRF_TRUSTED_ORIGINS = ["ab-projects-zone.herokuapp.com"]
 # Application definition
 
 INSTALLED_APPS = [
@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     "django.middleware.locale.LocaleMiddleware",
     'django.middleware.common.CommonMiddleware',
-    # 'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     "django.middleware.common.BrokenLinkEmailsMiddleware",
