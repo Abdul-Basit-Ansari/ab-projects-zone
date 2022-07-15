@@ -9,7 +9,7 @@ def index(request):
 	return render(request,"index.html")
 
 def projects(request):
-	projects = Project.objects.all()
+	projects = Project.objects.all().order_by('-date')
 	dic = {'projects':projects}
 	return render(request,'projects.html',dic)	
 
