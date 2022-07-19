@@ -46,6 +46,38 @@
 	</span>
 </div>
 <!-- table -->
+<style>
+    .mywidth100{
+        width: 100%;
+    }
+    .mywidth90{
+        width: 90%;
+    }
+    .mywidth80{
+        width: 80%;
+    }
+    .mywidth70{
+        width: 70%;
+    }
+    .mywidth60{
+        width: 60%;
+    }
+    .mywidth50{
+        width: 50%;
+    }
+    .mywidth40{
+        width: 40%;
+    }
+    .mywidth30{
+        width: 30%;
+    }
+    .mywidth20{
+        width: 20%;
+    }
+    .mywidth10{
+        width: 10%;
+    }
+</style>
 
 <section class="text-gray-600 body-font ">
     <div class="container px-5 pb-24 mx-auto text-center ">
@@ -62,80 +94,22 @@
                     </tr>
                 </thead>
                 <tbody>
+                    
+                    {% for skill in skills %}
+                        
+                    
                     <tr class="text-left ">
-                        <td class="w-2/6 px-4 py-3 ">Html,CSS</td>
+                        <td class="w-2/6 px-4 py-3 ">{{skill.title}}</td>
                         <td class="px-4 py-3 ">
                             <div class="w-full bg-gray-200 rounded-full ">
-                                <div class="bg-teal-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-l-full " style="width: 90% "> 90%</div>
+                                <div class="bg-teal-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-l-full mywidth{{skill.range}}"> {{skill.range}}%</div>
                             </div>
                         </td>
 
                     </tr>
-                    <tr class="text-left ">
-                        <td class="w-2/6 border-t-2 border-gray-200 px-4 py-3 ">Javascript , Nodejs</td>
-                        <td class="border-t-2 border-gray-200 px-4 py-3 ">
-                            <div class="w-full bg-gray-200 rounded-full ">
-                                <div class="bg-teal-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-l-full " style="width: 40% "> 40%</div>
-                            </div>
-                        </td>
-
-                    </tr>
-                    <tr class="text-left ">
-                        <td class="w-2/6 border-t-2 border-gray-200 px-4 py-3 ">Python</td>
-                        <td class="border-t-2 border-gray-200 px-4 py-3 ">
-                            <div class="w-full bg-gray-200 rounded-full ">
-                                <div class="bg-teal-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-l-full " style="width: 60% "> 60%</div>
-                            </div>
-                        </td>
-
-                    </tr>
-                    <tr class="text-left ">
-                        <td class="w-2/6 border-t-2 border-b-2 border-gray-200 px-4 py-3 ">Mysql , Postgresql , Sqlite3</td>
-                        <td class="border-t-2 border-b-2 border-gray-200 px-4 py-3 ">
-                            <div class="w-full bg-gray-200 rounded-full ">
-                                <div class="bg-teal-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-l-full " style="width: 80% "> 80%</div>
-                            </div>
-                        </td>
-
-                    </tr>
-                    <tr class="text-left ">
-                        <td class="w-2/6 border-t-2 border-b-2 border-gray-200 px-4 py-3 ">Mongodb</td>
-                        <td class="border-t-2 border-b-2 border-gray-200 px-4 py-3 ">
-                            <div class="w-full bg-gray-200 rounded-full ">
-                                <div class="bg-teal-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-l-full " style="width: 30% "> 30%</div>
-                            </div>
-                        </td>
-
-                    </tr>
-                    <tr class="text-left ">
-                        <td class="w-2/6 border-t-2 border-b-2 border-gray-200 px-4 py-3 ">SASS , Bootstrap , Tailwindcss</td>
-                        <td class="border-t-2 border-b-2 border-gray-200 px-4 py-3 ">
-                            <div class="w-full bg-gray-200 rounded-full ">
-                                <div class="bg-teal-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-l-full " style="width: 80% "> 80%</div>
-                            </div>
-                        </td>
-
-                    </tr>
-                    <tr class="text-left ">
-                        <td class="w-2/6 border-t-2 border-b-2 border-gray-200 px-4 py-3 ">React , Angular , Expressjs</td>
-                        <td class="border-t-2 border-b-2 border-gray-200 px-4 py-3 ">
-                            <div class="w-full bg-gray-200 rounded-full ">
-                                <div class="bg-teal-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-l-full " style="width: 30% "> 30%</div>
-                            </div>
-                        </td>
-
-                    </tr>
-                    <tr class="text-left ">
-                        <td class="w-2/6 border-t-2 border-b-2 border-gray-200 px-4 py-3 ">Django , Django-Restframework</td>
-                        <td class="border-t-2 border-b-2 border-gray-200 px-4 py-3 ">
-                            <div class="w-full bg-gray-200 rounded-full ">
-                                <div class="bg-teal-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-l-full " style="width: 80% "> 80%</div>
-                            </div>
-                        </td>
-
-                    </tr>
-
-
+                    
+                    {% endfor %}
+                    
                 </tbody>
             </table>
         </div>

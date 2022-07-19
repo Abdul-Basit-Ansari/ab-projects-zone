@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from . models import Project,Contactus,Feedback
+from . models import Project,Contactus,Feedback,Skill
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth  import authenticate,  login, logout
@@ -40,7 +40,8 @@ def feedback(request):
 
 
 def about(request):
-	return render(request,"about.html")
+	skills = Skill.objects.all()
+	return render(request,"about.html" , {'skills':skills})
 
 
 def ulogin(request):

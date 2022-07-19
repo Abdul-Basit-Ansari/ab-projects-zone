@@ -62,3 +62,27 @@ class Feedback(models.Model):
 	def __str__(self):
 		"""Unicode representation of Contactus."""
 		return self.name + "  " + str(self.date)
+
+
+
+
+
+
+class Skill(models.Model):
+	"""Model definition for Project."""
+	sno = models.AutoField(primary_key=True)
+	title = models.CharField(max_length=50)
+	range = models.IntegerField()
+	date = models.DateTimeField(auto_now_add=True)
+
+
+
+	class Meta:
+		"""Meta definition for Project."""
+
+		verbose_name = 'Project'
+		verbose_name_plural = 'Projects'
+
+	def __str__(self):
+		"""Unicode representation of Project."""
+		return self.title

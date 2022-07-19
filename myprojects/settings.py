@@ -23,12 +23,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ['SECRET_KEY']
 
 
-
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =False
+DEBUG =True
+# ALLOWED_HOSTS = ["ab-projects-zone.herokuapp.com","localhost","127.0.0.1"]
 ALLOWED_HOSTS = ["ab-projects-zone.herokuapp.com","localhost","127.0.0.1"]
 
-CSRF_TRUSTED_ORIGINS = ["https://ab-projects-zone.herokuapp.com"]
+# CSRF_TRUSTED_ORIGINS = ["http://127.0.0.1:8000/"]
+CSRF_TRUSTED_ORIGINS = ["https://ab-projects-zone.herokuapp.com","https://localhost","http://127.0.0.1"]
 # Application definition
 
 INSTALLED_APPS = [
