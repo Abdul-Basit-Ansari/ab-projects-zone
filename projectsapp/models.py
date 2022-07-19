@@ -80,8 +80,8 @@ class Skill(models.Model):
 	class Meta:
 		"""Meta definition for Project."""
 
-		verbose_name = 'Project'
-		verbose_name_plural = 'Projects'
+		verbose_name = 'Skill'
+		verbose_name_plural = 'Skills'
 
 	def __str__(self):
 		"""Unicode representation of Project."""
