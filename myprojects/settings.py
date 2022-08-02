@@ -20,18 +20,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = os.environ['SECRET_KEY']
-SECRET_KEY = 'django-insecure-dn6xl*1tn0^0ch9zxr5+5#_tw&yyvbs@-ca8kds3ox-_9ssv%e'
+SECRET_KEY = os.environ['SECRET_KEY']
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =True
-# ALLOWED_HOSTS = ["ab-projects-zone.herokuapp.com","localhost","127.0.0.1"]
-ALLOWED_HOSTS = ["*"]
-# ALLOWED_HOSTS = ["ab-projects-zone.herokuapp.com","localhost","127.0.0.1"]
-CSRF_COOKIE_SECURE=False
+
+ALLOWED_HOSTS = ["ab-projects-zone.herokuapp.com","localhost","127.0.0.1"]
 # CSRF_TRUSTED_ORIGINS = ["http://127.0.0.1:8000/"]
-CSRF_TRUSTED_ORIGINS = ["https://ab-projects-zone.herokuapp.com","http://localhost","http://127.0.0.1:8000/login/","http://127.0.0.1:8000"]
+CSRF_TRUSTED_ORIGINS = ["https://ab-projects-zone.herokuapp.com","http://localhost","http://127.0.0.1"]
 # Application definition
 
 INSTALLED_APPS = [
@@ -143,13 +140,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
   
 
-# if DEBUG:
+if DEBUG:
 
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-# else:
+else:
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
   
 
