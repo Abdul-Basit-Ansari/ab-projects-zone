@@ -9,7 +9,7 @@ def index(request):
 	return render(request,"index.html")
 
 def projects(request):
-	projects = Project.objects.all().order_by('-date')
+	projects = Project.objects.all().order_by('-num')
 	dic = {'projects':projects}
 	return render(request,'projects.html',dic)	
 
@@ -40,7 +40,7 @@ def feedback(request):
 
 
 def about(request):
-	skills = Skill.objects.all()
+	skills = Skill.objects.all().order_by('-num')
 	return render(request,"about.html" , {'skills':skills})
 
 

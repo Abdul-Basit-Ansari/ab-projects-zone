@@ -36,8 +36,8 @@
                     <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="{{project.cover.url}}" alt="blog">
                     <div class="p-6">
                         <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">{{project.date}}</h4>
-                            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">{{project.title}}</h1>
-                            <p class="leading-relaxed mb-3">{{project.desc}}</p>
+                            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">{{project.title|title}}</h1>
+                            <p class="leading-relaxed mb-3">{{project.desc|title}}</p>
                             <div class="flex items-center flex-wrap ">
 
                                 <a href="{{project.link}}" target="_blank" class="inline-flex text-teal-100 bg-teal-600 border-0 py-2 px-6 focus:outline-none hover:bg-teal-900 hover:text-teal-300 rounded text-lg">Visit Site</a>

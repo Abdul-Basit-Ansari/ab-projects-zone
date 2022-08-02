@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 class Project(models.Model):
 	"""Model definition for Project."""
 	sno = models.AutoField(primary_key=True)
+	num = models.IntegerField()
 	cover = models.ImageField(upload_to="img/projectcover")
 	title = models.CharField(max_length=50)
 	user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -71,6 +72,7 @@ class Feedback(models.Model):
 class Skill(models.Model):
 	"""Model definition for Project."""
 	sno = models.AutoField(primary_key=True)
+	num = models.IntegerField()
 	title = models.CharField(max_length=50)
 	range = models.IntegerField()
 	date = models.DateTimeField(auto_now_add=True)
